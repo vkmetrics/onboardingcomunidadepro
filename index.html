@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onboarding — Comunidade VK Metrics Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple-50: #EEEDFE;
+    --purple-100: #CECBF6;
+    --purple-200: #AFA9EC;
+    --purple-400: #7F77DD;
+    --purple-600: #534AB7;
+    --purple-800: #3C3489;
+    --purple-900: #26215C;
+    --teal-50: #E1F5EE;
+    --teal-100: #9FE1CB;
+    --teal-400: #1D9E75;
+    --teal-600: #0F6E56;
+    --teal-800: #085041;
+    --coral-50: #FAECE7;
+    --coral-600: #993C1D;
+    --amber-50: #FAEEDA;
+    --amber-100: #FAC775;
+    --amber-600: #854F0B;
+    --gray-50: #F8F7F5;
+    --gray-100: #F1EFE8;
+    --gray-200: #D3D1C7;
+    --gray-400: #888780;
+    --gray-600: #5F5E5A;
+    --gray-900: #1A1A18;
+    --text-primary: #1A1A18;
+    --text-secondary: #5F5E5A;
+    --text-muted: #888780;
+    --border: rgba(26,26,24,0.1);
+    --border-med: rgba(26,26,24,0.18);
+    --bg: #F2F0EC;
+    --bg-card: #FFFFFF;
+    --bg-surface: #ECEAE5;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  /* ── MARI BAR ── */
+  .mari-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px 18px;
+    margin: 24px 0 0;
+    position: sticky;
+    top: 16px;
+    z-index: 10;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .mari-av {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--purple-50);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600; font-size: 12px;
+    color: var(--purple-800);
+    flex-shrink: 0;
+    border: 1.5px solid var(--purple-100);
+  }
+  .mari-text { flex: 1; font-size: 13px; color: var(--text-secondary); line-height: 1.4; }
+  .mari-text strong { color: var(--text-primary); font-weight: 500; }
+  .mari-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 12px; font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--purple-200);
+    background: transparent; color: var(--purple-600);
+    cursor: pointer; white-space: nowrap;
+    transition: background .15s, color .15s;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+  }
+  .mari-btn:hover { background: var(--purple-50); }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center;
+    padding: 52px 20px 36px;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 20px;
+    background: var(--purple-900); color: var(--purple-100);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px; font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: -.025em;
+  }
+  .hero h1 span { color: var(--purple-600); font-weight: 500; }
+  .hero-sub {
+    font-size: 15px; color: var(--text-secondary);
+    line-height: 1.65; max-width: 420px; margin: 0 auto;
+  }
+
+  /* ── SECTION LABEL ── */
+  .sec-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .1em;
+    color: var(--text-muted);
+    margin: 36px 0 12px;
+  }
+
+  /* ── COMMITMENT BOX ── */
+  .commitment-box {
+    background: var(--purple-900);
+    border-radius: var(--radius-lg);
+    padding: 20px 22px;
+    margin-bottom: 8px;
+  }
+  .commitment-box h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: var(--purple-100);
+    text-transform: uppercase; letter-spacing: .06em;
+    margin-bottom: 14px;
+  }
+  .commit-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    margin-bottom: 10px;
+  }
+  .commit-row:last-child { margin-bottom: 0; }
+  .commit-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%; background: var(--purple-400);
+    flex-shrink: 0; margin-top: 7px;
+  }
+  .commit-text { font-size: 13px; color: var(--purple-200); line-height: 1.5; }
+  .commit-text strong { color: #EEEDFE; font-weight: 500; }
+
+  /* ── STEP CARDS ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    transition: border-color .25s, background .25s;
+  }
+  .card.locked { opacity: .38; pointer-events: none; }
+  .card.done { border-color: var(--teal-400); background: var(--teal-50); }
+  .card-row { display: flex; align-items: flex-start; gap: 14px; }
+  .ico {
+    width: 38px; height: 38px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .ico svg { width: 16px; height: 16px; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+  .ico-red { background: var(--coral-50); }
+  .ico-red svg { stroke: var(--coral-600); }
+  .ico-purple { background: var(--purple-50); }
+  .ico-purple svg { stroke: var(--purple-600); }
+  .ico-teal { background: var(--teal-50); }
+  .ico-teal svg { stroke: var(--teal-600); }
+  .cbody { flex: 1; }
+  .tag {
+    display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 3px 9px; border-radius: 20px; margin-bottom: 8px;
+    font-family: 'Outfit', sans-serif;
+  }
+  .tag-red { background: var(--coral-50); color: var(--coral-600); }
+  .tag-amber { background: var(--amber-50); color: var(--amber-600); }
+  .tag-teal { background: var(--teal-50); color: var(--teal-600); }
+  .step-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px; font-weight: 600;
+    color: var(--text-primary); margin-bottom: 5px;
+  }
+  .step-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 10px; }
+  .step-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 12px; }
+  .lock-row {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--text-muted); margin-top: 4px;
+  }
+  .lock-row svg { width: 12px; height: 12px; stroke: currentColor; fill: none; flex-shrink: 0; stroke-width: 1.3; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 500;
+    padding: 9px 18px; border-radius: 20px;
+    background: var(--purple-600); color: #fff;
+    border: none; cursor: pointer;
+    transition: background .15s;
+    font-family: 'Outfit', sans-serif;
+  }
+  .btn-primary:hover { background: var(--purple-800); }
+  .btn-done {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--teal-600); color: #fff;
+    border: none; padding: 9px 18px; border-radius: 20px;
+    font-size: 13px; font-weight: 500; cursor: default;
+    font-family: 'Outfit', sans-serif;
+  }
+  .check-abs {
+    position: absolute; top: 16px; right: 16px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--teal-400);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .check-abs svg { width: 12px; height: 12px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ── CELEBRATION ── */
+  .celebration {
+    background: var(--purple-50);
+    border: 1px solid var(--purple-100);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    display: none;
+    animation: fadeSlide .4s ease;
+  }
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .cel-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px; font-weight: 700;
+    color: var(--purple-900); margin-bottom: 6px;
+  }
+  .cel-text { font-size: 13px; color: var(--purple-600); line-height: 1.55; }
+
+  /* ── BRIEFING ── */
+  .briefing-box {
+    background: var(--bg-surface);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px; margin-top: 12px;
+    display: block;
+  }
+  .briefing-title {
+    font-size: 11px; font-weight: 500; color: var(--text-primary);
+    text-transform: uppercase; letter-spacing: .06em;
+    margin-bottom: 12px;
+    font-family: 'Outfit', sans-serif;
+  }
+  .briefing-q {
+    font-size: 13px; color: var(--text-secondary);
+    margin-bottom: 10px; line-height: 1.5;
+    padding-left: 12px;
+    border-left: 2px solid var(--purple-200);
+  }
+  .briefing-q:last-child { margin-bottom: 0; }
+
+  /* ── PRIMEIRA VITÓRIA ── */
+  .vitoria-card {
+    background: var(--teal-50);
+    border: 1px solid var(--teal-100);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    margin-bottom: 10px;
+    animation: fadeSlide .4s ease;
+  }
+  .vitoria-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .1em;
+    color: var(--teal-600); margin-bottom: 6px;
+  }
+  .vitoria-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px; font-weight: 600;
+    color: var(--teal-800); margin-bottom: 6px;
+  }
+  .vitoria-desc { font-size: 13px; color: var(--teal-600); line-height: 1.55; margin-bottom: 14px; }
+  .btn-teal {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 500;
+    padding: 9px 18px; border-radius: 20px;
+    background: var(--teal-600); color: #fff;
+    border: none; cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    transition: background .15s;
+  }
+  .btn-teal:hover { background: var(--teal-800); }
+
+  .vitoria-locked {
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 20px; text-align: center;
+    margin-bottom: 10px;
+  }
+  .vitoria-locked p { font-size: 13px; color: var(--text-muted); }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+
+  /* ── TIMELINE ── */
+  .tl { display: flex; flex-direction: column; }
+  .tl-item { display: flex; gap: 16px; padding-bottom: 24px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 24px; flex-shrink: 0; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--purple-600); flex-shrink: 0; margin-top: 3px; border: 2px solid var(--bg); box-shadow: 0 0 0 1.5px var(--purple-600); }
+  .tl-dot.gray { background: var(--gray-200); box-shadow: 0 0 0 1.5px var(--gray-200); }
+  .tl-line { width: 1px; background: var(--border-med); flex: 1; margin-top: 4px; }
+  .tl-item:last-child .tl-line { display: none; }
+  .tl-when { font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 700; color: var(--purple-600); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 2px; }
+  .tl-when.gray { color: var(--text-muted); }
+  .tl-what { font-size: 14px; font-weight: 500; color: var(--text-primary); margin-bottom: 3px; }
+  .tl-sub { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+  /* ── TRILHAS ── */
+  .trilha-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .tc {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    transition: border-color .2s;
+  }
+  .tc.locked { opacity: .32; pointer-events: none; }
+  .tc:not(.locked):hover { border-color: var(--purple-200); }
+  .tc-ico { width: 32px; height: 32px; border-radius: var(--radius-sm); background: var(--purple-50); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+  .tc-ico svg { width: 16px; height: 16px; stroke: var(--purple-600); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+  .tc-name { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+  .tc-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.45; margin-bottom: 12px; }
+  .tc-action { font-size: 12px; font-weight: 500; color: var(--purple-600); border-top: 1px solid var(--border); padding-top: 10px; }
+
+  /* ── BÔNUS ── */
+  .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 10px; }
+  .bonus-card { background: var(--bg-surface); border-radius: var(--radius-md); padding: 14px 16px; }
+  .bonus-name { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+  .bonus-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.45; }
+
+  /* ── PRESENCIAIS ── */
+  .presencial-hero {
+    background: var(--purple-900);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    margin-bottom: 10px;
+  }
+  .presencial-eyebrow {
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .1em;
+    color: var(--purple-400); margin-bottom: 8px;
+  }
+  .presencial-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px; font-weight: 700;
+    color: #EEEDFE; line-height: 1.25; margin-bottom: 8px;
+  }
+  .presencial-sub { font-size: 13px; color: var(--purple-200); line-height: 1.6; margin-bottom: 18px; }
+  .presencial-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+  .pill {
+    font-size: 11px; font-weight: 500;
+    padding: 4px 12px; border-radius: 20px;
+    background: rgba(127,119,221,.18); color: #CECBF6;
+    border: 1px solid rgba(127,119,221,.25);
+  }
+  .presencial-sep { height: 1px; background: rgba(175,169,236,.2); margin-bottom: 18px; }
+  .outros-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .08em;
+    color: var(--purple-400); margin-bottom: 12px;
+  }
+  .evento-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .evento-row:last-child { margin-bottom: 0; }
+  .evento-name { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; color: #CECBF6; }
+  .evento-sub { font-size: 12px; color: var(--purple-400); margin-top: 1px; }
+  .evento-tag {
+    font-size: 11px; padding: 3px 10px; border-radius: 20px;
+    background: rgba(127,119,221,.15); color: var(--purple-200);
+    border: 1px solid rgba(127,119,221,.2); white-space: nowrap;
+  }
+
+  /* ── CENTRAL ── */
+  .central-card {
+    background: var(--bg-card);
+    border: 2px solid var(--purple-600);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  .central-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+  .central-ico {
+    width: 42px; height: 42px;
+    border-radius: var(--radius-sm);
+    background: var(--purple-50);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .central-ico svg { width: 18px; height: 18px; stroke: var(--purple-600); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+  .central-title { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+  .central-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+  .central-url {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--bg-surface);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px; font-weight: 600;
+    color: var(--purple-600);
+    margin-bottom: 14px;
+    text-decoration: none;
+    border: 1px solid var(--purple-100);
+    transition: background .15s;
+    word-break: break-all;
+  }
+  .central-url:hover { background: var(--purple-50); }
+  .central-url svg { width: 14px; height: 14px; stroke: var(--purple-600); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; fill: none; flex-shrink: 0; }
+  .central-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .cs-item { background: var(--bg-surface); border-radius: var(--radius-sm); padding: 12px 14px; }
+  .cs-label { font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); margin-bottom: 4px; }
+  .cs-val { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+  /* ── MEMBROS GRID ── */
+  .membros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mg-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px; transition: border-color .2s; }
+  .mg-card:hover { border-color: var(--gray-200); }
+  .mg-ico { width: 32px; height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+  .mg-ico svg { width: 16px; height: 16px; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+  .mg-ico-purple { background: var(--purple-50); }
+  .mg-ico-purple svg { stroke: var(--purple-600); }
+  .mg-ico-teal { background: var(--teal-50); }
+  .mg-ico-teal svg { stroke: var(--teal-600); }
+  .mg-title { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+  .mg-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.45; margin-bottom: 12px; }
+  .mg-action { font-size: 12px; font-weight: 500; color: var(--purple-600); border-top: 1px solid var(--border); padding-top: 10px; cursor: pointer; }
+
+  /* ── PLANTÕES ── */
+  .pl-list { display: flex; flex-direction: column; gap: 8px; }
+  .pl-row {
+    display: flex; align-items: center; justify-content: space-between;
+    background: #F5F4FE;
+    border: 1px solid var(--purple-100);
+    border-radius: var(--radius-md); padding: 12px 16px;
+  }
+  .pl-name { font-size: 13px; font-weight: 500; color: var(--text-primary); }
+  .pl-time { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .pl-freq { font-size: 11px; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+  .freq-s { background: var(--purple-50); color: var(--purple-800); }
+  .freq-q { background: var(--gray-100); color: var(--gray-600); }
+  .next-b { background: var(--coral-50); color: var(--coral-600); font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 20px; margin-left: 7px; }
+  .agenda-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 500; color: var(--purple-600);
+    padding: 9px 16px; border: 1px solid var(--purple-200);
+    border-radius: 20px; cursor: pointer; background: transparent;
+    margin-top: 12px; transition: background .15s;
+    font-family: 'Outfit', sans-serif;
+  }
+  .agenda-btn:hover { background: var(--purple-50); }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 40px 0 0;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer-logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .footer-sub { font-size: 12px; color: var(--text-muted); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 28px; }
+    .trilha-grid { grid-template-columns: 1fr; }
+    .membros-grid { grid-template-columns: 1fr; }
+    .central-steps { grid-template-columns: 1fr; }
+    .mari-bar { position: static; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MARI BAR -->
+  <div class="mari-bar">
+    <div class="mari-av" style="padding:0;overflow:hidden"><img src="data:image/jpeg;base64,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" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0"></div>
+    <div class="mari-text"><strong>Mari Camargos</strong> — sua CS durante toda a jornada. Qualquer dúvida, ela está aqui.</div>
+    <a class="mari-btn" href="https://wa.me/5532998064242" target="_blank">WhatsApp →</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+        <div class="hero-badge">Comunidade VK Metrics Pro</div>
+    <h1 id="headline">Bem-vindo à sua <span>jornada.</span></h1>
+    <p class="hero-sub">Você tomou uma decisão importante. Agora o trabalho começa — e a VK está aqui em cada passo.</p>
+  </div>
+
+  <!-- COMPROMISSO -->
+  <div class="commitment-box">
+    <h3>Como extrair o máximo da Comunidade</h3>
+    <div class="commit-row"><div class="commit-dot"></div><div class="commit-text"><strong>Participe dos plantões, workshops e desafios.</strong> Quem aparece com frequência transforma mais rápido — cada encontro é uma oportunidade de sair com algo acionável.</div></div>
+    <div class="commit-row"><div class="commit-dot"></div><div class="commit-text"><strong>Traga seus números.</strong> As melhores decisões nascem de dados reais. Quanto mais contexto você trouxer, mais preciso será o direcionamento.</div></div>
+    <div class="commit-row"><div class="commit-dot"></div><div class="commit-text"><strong>Compartilhe seus desafios abertamente.</strong> Aqui é um espaço seguro. Quanto mais honesto você for sobre onde está travado, mais rápido a gente consegue destravar juntos.</div></div>
+    <div class="commit-row"><div class="commit-dot"></div><div class="commit-text"><strong>Contribua com o grupo.</strong> Você carrega experiências que podem mudar o jogo para outros membros. A mentoria é tão poderosa quanto as pessoas que a formam — e você já é uma delas.</div></div>
+  </div>
+
+  <!-- PASSOS -->
+  <div class="sec-label">Passos obrigatórios — Saiba o que esperar</div>
+  <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;">Assim será a sua jornada inicial. A CS te guiará no WhatsApp com os links.</p>
+
+  <div class="card" id="c1">
+    <div class="card-row">
+      <div class="ico ico-purple">
+        <svg viewBox="0 0 16 16"><path d="M13 2H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/><path d="M5 6h6M5 9h4"/></svg>
+      </div>
+      <div class="cbody">
+        <span class="tag tag-amber">Passo 1</span>
+        <div class="step-title">Preencha o formulário com os seus dados</div>
+        <div class="step-desc">É a partir dele que vamos produzir o seu contrato.</div>
+        <div class="step-meta">Leva cerca de 8 minutos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="c2">
+    <div class="card-row">
+      <div class="ico ico-red">
+        <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 1.5"/></svg>
+      </div>
+      <div class="cbody">
+        <span class="tag tag-red">Passo 2</span>
+        <div class="step-title">Assine o contrato</div>
+        <div class="step-desc">Sem assinatura, seu acesso às aulas e aos próximos passos pode ser interrompido a qualquer momento.</div>
+        <div class="step-meta">Leva cerca de 3 minutos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="celebration" id="cel2">
+    <div class="cel-title">Contrato assinado.</div>
+    <div class="cel-text">Você acabou de oficializar sua entrada em uma das mentorias mais sérias do mercado digital brasileiro. Isso exige de você — e é exatamente por isso que vale a pena.</div>
+  </div>
+
+  <div class="card" id="c3">
+    <div class="card-row">
+      <div class="ico ico-purple">
+        <svg viewBox="0 0 16 16"><path d="M14 5c0 5-6 9-6 9S2 10 2 5a6 6 0 1 1 12 0z"/><circle cx="8" cy="5" r="2"/></svg>
+      </div>
+      <div class="cbody">
+        <span class="tag tag-amber">Passo 3</span>
+        <div class="step-title">Entre no grupo do WhatsApp</div>
+        <div class="step-desc">Apresente-se com seu nome e o que você faz. É aqui que as melhores conexões começam.</div>
+        <div class="lock-row" id="lock3">
+          <svg viewBox="0 0 12 12"><rect x="2.5" y="5.5" width="7" height="5" rx="1"/><path d="M4.5 5.5V4a1.5 1.5 0 0 1 3 0v1.5"/></svg>
+          Disponível após assinar o contrato
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="c4">
+    <div class="card-row">
+      <div class="ico ico-teal">
+        <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 2v2M11 2v2M2 7h12"/></svg>
+      </div>
+      <div class="cbody">
+        <span class="tag tag-teal">Passo 4</span>
+        <div class="step-title">Agende sua sessão de onboarding</div>
+        <div class="step-desc">Essa é a primeira sessão dentro das 4 que você terá com um dos sócios da VK. 1h30 para traçar o plano dos seus próximos 12 meses.</div>
+        <div class="briefing-box" id="briefing4">
+          <div class="briefing-title">Como se preparar para a call</div>
+          <p style="font-size:12px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px">Essa é a call mais importante do seu início na Comunidade. É aqui que entendemos de verdade onde você está, para onde quer ir e como podemos acelerar essa jornada juntos. Quanto mais você chegar preparado, mais cirúrgico será o direcionamento.</p>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="background:var(--bg-card);border-radius:var(--radius-sm);padding:10px 12px;border-left:3px solid var(--purple-400)">
+              <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--purple-600);margin-bottom:3px;font-family:'Outfit',sans-serif">Objetivos do negócio</div>
+              <div style="font-size:12px;color:var(--text-secondary);line-height:1.5">Onde seu negócio está hoje e onde você quer chegar? Pense em faturamento, audiência, posicionamento.</div>
+            </div>
+            <div style="background:var(--bg-card);border-radius:var(--radius-sm);padding:10px 12px;border-left:3px solid var(--purple-400)">
+              <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--purple-600);margin-bottom:3px;font-family:'Outfit',sans-serif">Objetivos dentro da Comunidade</div>
+              <div style="font-size:12px;color:var(--text-secondary);line-height:1.5">O que você espera extrair da Comunidade VK Metrics Pro? Qual seria o resultado que faria você dizer que valeu cada centavo?</div>
+            </div>
+            <div style="background:var(--bg-card);border-radius:var(--radius-sm);padding:10px 12px;border-left:3px solid var(--purple-400)">
+              <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--purple-600);margin-bottom:3px;font-family:'Outfit',sans-serif">Desafios atuais</div>
+              <div style="font-size:12px;color:var(--text-secondary);line-height:1.5">Quais são os maiores obstáculos do seu negócio hoje? O que está travando o seu crescimento?</div>
+            </div>
+            <div style="background:var(--bg-card);border-radius:var(--radius-sm);padding:10px 12px;border-left:3px solid var(--purple-400)">
+              <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--purple-600);margin-bottom:3px;font-family:'Outfit',sans-serif">Resultados esperados</div>
+              <div style="font-size:12px;color:var(--text-secondary);line-height:1.5">Em 12 meses, como é o seu negócio ideal? Seja específico — números concretos ajudam a construir um plano real.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ENTREGÁVEIS -->
+  <div class="sec-label">Fique por dentro dos entregáveis</div>
+
+  <!-- Área de membros -->
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;margin-bottom:10px">
+    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px">
+      <div class="mg-ico mg-ico-purple">
+        <svg viewBox="0 0 16 16" style="width:16px;height:16px;stroke:#534AB7;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;fill:none"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M5 7h6M5 10h4"/></svg>
+      </div>
+      <div>
+        <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:3px">Área de membros</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.5">Acesse pelas trilhas — Automações e Funis, Dados, Comunicação, VKuartas e mais.</div>
+      </div>
+    </div>
+    <div class="trilha-grid" style="margin-bottom:16px">
+      <div class="tc">
+        <div class="tc-ico"><svg viewBox="0 0 20 20"><path d="M3 6h14M3 10h10M3 14h7"/></svg></div>
+        <div class="tc-name">Comunicação</div>
+        <div class="tc-desc">Posicionamento e narrativa que converte.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-ico"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="3"/><path d="M10 3v2M10 15v2M3 10h2M15 10h2"/></svg></div>
+        <div class="tc-name">Automação</div>
+        <div class="tc-desc">Vendas funcionando 24/7.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-ico"><svg viewBox="0 0 20 20"><path d="M3 15l4-5 4 3 4-7"/></svg></div>
+        <div class="tc-name">Dados</div>
+        <div class="tc-desc">Decisões sem achismo.</div>
+      </div>
+    </div>
+    <a href="https://hotmart.com/pt-br/club/api-oficial" target="_blank" class="btn-primary" style="text-decoration:none;display:inline-flex">Acessar área de membros →</a>
+  </div>
+
+  <!-- Central da Comunidade + Grupo de suporte -->
+  <div class="membros-grid" style="margin-bottom:10px">
+    <div class="mg-card">
+      <div class="mg-ico mg-ico-purple">
+        <svg viewBox="0 0 16 16" style="width:16px;height:16px;stroke:#534AB7;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;fill:none"><rect x="2" y="2" width="12" height="12" rx="1.5"/><path d="M5 8h6M8 5v6"/></svg>
+      </div>
+      <div class="mg-title">Central da Comunidade</div>
+      <div class="mg-desc">Tudo em um lugar só — plantões, trilhas, materiais e suporte. Favorite agora e acesse direto sempre que precisar.</div>
+      <div class="mg-action" style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border)">
+        <a href="https://vkmetrics.github.io/mentoriaasgard/" target="_blank" style="color:var(--purple-600);text-decoration:none;font-size:12px;font-weight:500">Acessar a Central →</a>
+      </div>
+    </div>
+    <div class="mg-card">
+      <div class="mg-ico mg-ico-teal">
+        <svg viewBox="0 0 16 16"><path d="M2 5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-3 2v-2H4a2 2 0 0 1-2-2V5z"/></svg>
+      </div>
+      <div class="mg-title">Grupo de suporte</div>
+      <div class="mg-desc">Networking 24h com os melhores empreendedores digitais do Brasil. Cada dúvida compartilhada vira insight para todos.</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-top:12px;padding-top:10px;border-top:1px solid var(--border)">O link do grupo será enviado pela CS.</div>
+    </div>
+  </div>
+
+  <!-- BÔNUS (dinâmico) -->
+  <div id="bonus-section" style="display:none">
+    <div style="height:10px"></div>
+    <div class="sec-label" style="margin-top:1rem">Seus bônus</div>
+    <div class="bonus-grid" id="bonus-grid"></div>
+  </div>
+
+  <!-- Como funciona nosso dia a dia -->
+  <div style="margin-top:28px">
+    <div style="font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:4px;font-family:'Outfit',sans-serif">Como funciona nosso dia a dia</div>
+    <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:20px">Entenda os formatos dos nossos encontros e como explorar ao máximo a mentoria.</p>
+
+    <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;font-family:'Outfit',sans-serif">Plantões</div>
+
+    <div class="pl-list" style="margin-bottom:24px">
+
+      <div class="pl-row" style="align-items:flex-start;flex-direction:column;gap:10px;padding:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:10px">
+            <img src="data:image/jpeg;base64,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" style="width:32px;height:32px;border-radius:50%;object-fit:cover;flex-shrink:0">
+            <div>
+              <div class="pl-name">Plantão de Automações · Pedro Cabral</div>
+              <div class="pl-time">Terças às 15h30</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;flex-shrink:0"><span class="pl-freq freq-s">Semanal</span></div>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary);line-height:1.5">Ocorre semanalmente e não exige inscrição prévia. Entre com seu desafio de automação e o gestor responsável ajudará a resolvê-lo.</div>
+      </div>
+
+      <div class="pl-row" style="align-items:flex-start;flex-direction:column;gap:10px;padding:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:10px">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABQAFADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCC+1EeG9Ctb3T21QeXdbEtVnLQCM5wuD6EH86k8V3Kal4Ftry7EiKqSXDpCW39FyBg8+uDW7d/D2yvvCTXsni/VzYxRtIiSWqbhIMjcQoJPOeB1rzPxSdch2aLo+s3t1pgs9jXN5YC0PmHqg6noBg980YejKu2k0rd/wCtyK9aFBXm7G9beL10e3ms9QvYZLeAIPNu7UzFVbhVAT5scelY76ZBa3n9p6brEavITPFb25J+XG4FUfkqcjrnrzWdo+m6trtxDpd/ctpIYL595MFuPOwf7qqCpAPBzjj3rrNU+H9+k0dxYeKLe6kNskaR3GmsgVAGU5ZSx3cdqdWCpT5JPX1Jo1FXhz03dD9f1qG68GCfVZbaxhu1UbpIyDG3G3btBIYk854rnPCC2Vt4hjPnXM8kNz9nVJE+USEHD/L6deeOma6m68A683hKG51zxHoVlosBQRywQSvITuCAENtxzj9T2rz7TlutP8RXEbTaeL6XXXKEzf6Osixk8v3XryPUc1ktVubNNbnX654nbXrs6HZXUmnvHLJFKyQsfMMeN2W/hHP0Oadoel6RpCwyajpgvTPGzCS9mKJt6k7MArgDr6EetUP+EF8d6ffWOo2VjY3j380k8kjMRFbtIgJ3EE/L2HXJFdHZ/CPxy7QGcaIubFrR5BKzYViSW6A9+lU+VLVgoy7GxoMs4kaSKZILWJXCxW8jbNhHCkFiDjGQcCo9G03TPF2pXy/Z5L69jRWkkuZy/lZxgkKEJ49WrE0qPxFpXjx/Advo1u081pHPI8k+3y4goTfkZBHAOOvPSuR0T4l694O8b69aReEbXWQkzQSJiQcIdobIBzyO4qUrsbulsWvDHxJ8T3fj6y8OaZqkknhy5cJIjWifNlSXyxXK5bsDXrskcbgK6KwyOCM14VoEvivT/ElhqeuW0ItbZjI0cS7S2FPI/wDr128Hxc8MBJZLqO9tvL5w0LHd7AhalxctglVUXaV/uZ22uBI7FpBtUgj5vxFeWeH/AIk6tqTXM2o3NhDMglxHDbCNPLQ/K3y9+Tn1rauPij4e1nS7qPSobm4mRPmRlxjdwD69a4C+k8XXukWeinRbSG1SIIZYmKSyAOGyxGDkgYx7muWVOdOtz2umkvS19fxN6VaFWnyq+nk+tu9ux6j4a8R+GvE8Nvp3i25tNRsrK92adA0JKNI6gl2Vc7myxA3cKD0yc0njGx0bULlotD0640mKKUwXJSy2JkKdjhe3K4yMZBFYOg67eaLpTSanpNlpjP8AuRfEZVHIwJScZXPPPIzjNbtj4tGqS2ei2+t2+sSAPJcHzlKxDkAPIcKWLEY6elcU3VdTmt/X5HuU44d4Xlk192v+ZzOgeONc8CXhhjuodQtY4pGjhvUk2QledyAMMdTkVs2nxp13xmJ9LudJsIIbdFufNtfNzIAxXGCTxzn1qXxd4dvLYs174eK7kKFJEyDn19uleS6nZahpMkjafot2paII5ibapbswUDgZNd9KcpL346/I8urSpx+Cd16M9NufH974R1hdWg8Opq0zRPCQs0iLGuAWboc9hVZPimfG8vmvoUdg1nJsaIT+YZA4++AyqcDGO/WvOnvbrUtTnuL3Q9UZfJAEZ3MFYn5mGOxx0rrdF0VfDiyavb36OZsKkCqR5WQD378cms8RioUFeUdehvg8BPFStCWnXy/I9VfRLeZ0MiqSvHIySKibw9pQJ3W8bn6dKg/4SplXasaKPYVA/id+oRc/SvJeeQW0X+B764UrvecfxNCLQ9HsoprqWOG3SNC7yuBhVHJJNeLeLfiXcvq0i6EUtbFV2RHylMkmD97JHBPp2r2Gbw7rvxD8OT2sGpxaVYs+13eEuZyOdowRhc4yfw9a+cvip4Q1bwL4mt9L1MRTNKDLDLbvuSZRxkZ5BB6g16+X4qniVd6PseDmWBqYKbgndLqu5Gur61d6qdQiS9ubxo3RvNQTK6YyylTkFQBn2xnikTVdQfT5tOAgtrSZg00UFuqeZg5AY8nGe3StDwV428ReEftDaHerbtcoFlRollU++HBAbtkY4JHSq8niTU380ssCCWRpH2RAEs3Xnr+Fek6cW7tHmRnJKyZo6d488UaXbJbx6xdSwRjCR3D+cgHbAbOPwr1f4eeJNJ8ZxNEVjs9TiQNLB1Ei93T1HqOo+nNfOviXUWkEsrLGGk67BtGfYV7N+zp8KrvWDa+K9bu57KxjxLZw28u2aduoYkfcT9W9h1xxE6dOHNLQ2w1OpUnywPS7jSvs8croIJA4xycfyryzXHurS4ntLyF4jnMZ6qwz2P8ASvcNZuLWxvntLmIL/Erf3h61zXiPR9K162eJ3Rt3+1gg+3pXgV8ZhK/uuVmj6bCYDH4b34wun2s7nDtc+9W9BtpdX1m206NiDM+GYfwr1J/LNcw92B3roPh34o0bw5rM2q6zJKI0hMcQij3sWJ5OPQAHmvDpUXUmopXPrcXilRpSm3Y9s13WbLwppaF3S1sbWFjgcABRwPrXxV8S/FF5488e3OqTvJFbgeVbIf4Yx6+5PNes/Hzxtb+IHW006cSWEaCTzAeJCRkfofz+leHW5hiDgkMznnH+NfUZVSSvJrU+Czeo2oq+j1LUFqsKYV7qXjsxAH5UkkF6isY5X+gmJP5MMVYjmeQ7VeJAe4kBY/h2p0jx7NrMoUd93f8ACvbPBsZdpayajfxWTK4Z2+YEfNgck59K9z+DHjG48ETR6FqUjNpszZt3Y8ROf4foe3vXlPgoiTxNu8oBViJB6k816Hrdjb3VoUZQVK8ivnM0xbjXVN/DY+vyTL1Uwrqr4rnuPxDMOr+FbbX7LJ8tgTjqUbg/kcGvPFupOzkfjXb/AAvn/tL4d2sEr+ZsjMT577SRzXm0UpWSSFuGikaMj3Ukf0r57F01zcyPqMqxD5XTl0Mrw94T8Q6/rVrpNjFD9ouX2ruk4UdSxwOABkmvoPwn4K03wTpU2lvKl7cNIHuLl4tolPAXCnOFGRj8T3rV+DPgx/D1hLrWrR+XqN4m2ONh80EXXB9GbjPoAB61jfHzXIdEsGvbieC3jnMMUbPOFYsJo9wA9doJ+gNexQwcvYpyXvP8jwcZj4zxDpwfuRX3s8S+PngnR7DVYdc027gVbp5GexkbH71XxI0fGDg9VPIzkZ7eW3VqJUw8CyY7FQa6T4veN7DW9TWz093uBZ3l67ujDymMk2VIfOCu0CuFTU0J/e3Ss39yLkD8a+gwcHCilI+UzCoqlduPl+Rajs3ibEFs8Jz1VMU/7JLM37y2Yg9S6cmmJfE/dJ/OpPtbf3j+ddZxFvSbSHTrsTwtsJBVlPcV041KOWLAcE46ZrinnEnDN+tMN2YU+RzlTwa87GZdTxL5noz18uzitglyJXj2Pfv2e9WMj6npDv8AJGfOT6Hg/qK5HULkx+K9atyeUvpf/Qq6L9n/AEa41BD4ot3t4oZIWt5Y0bLl1bk7R0HGfxqj4y8LTReNNTumlkgNzL5qLjKspA5/MGvmMSowTjPSx9jgJOpW5qeqav8Afqf/2Q==" style="width:32px;height:32px;border-radius:50%;object-fit:cover;flex-shrink:0">
+            <div>
+              <div class="pl-name">Plantão de Criativos · Homero Pirro</div>
+              <div class="pl-time">Quartas às 15h</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;flex-shrink:0"><span class="pl-freq freq-q">Quinzenal</span></div>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary);line-height:1.5">Ocorre quinzenalmente e não exige inscrição prévia. Entre com seu desafio de criativos e o especialista ajudará a resolvê-lo.</div>
+      </div>
+
+      <div class="pl-row" style="align-items:flex-start;flex-direction:column;gap:10px;padding:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="display:flex;flex-shrink:0">
+              <img src="data:image/jpeg;base64,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" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid var(--bg)">
+              <img src="data:image/jpeg;base64,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" style="width:32px;height:32px;border-radius:50%;object-fit:cover;margin-left:-8px;border:2px solid var(--bg)">
+              <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABQAFADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD12W1k9KrvatXh/hj4v+JtNKxaoItatxwfPJSUD2dev/Aga9Q8OfEzwZrmyJ5P7LuW48q+O1SfZx8p/EivWjiYs8qeGnHc2mtiOpFQSW6/3hS+KPEmgeHlhbVbyG389d8QWMuXXOCwwDkD1pZNRt5tBl1nTtl9bLbvPG0bfK4Clse2cfWtVW8yPZ6HLeK/FXhvw5NHBql+EnkIxFGpd1U/xEDoKn0XWNH1wN/ZF7BeFVDusbfMoPTI7V4hquuwXl1BPMjS6leoJriXGSztzjPoBgADgACrXgfWJY/FemXunxvBMbuO0uQRxNDIwUg+uCQR6YrCOPbla2h2zy5RhzX1PcZYHxgKo+tYejwf8TnWYhPkiZGZc/dJXt7V1U1sMkFpH/OsTT7SZPEeos0A8mRE8tgDklQNwP5j866JVldanDGlJ30MrxHbQxCwnmcYjvEKt15OR2q8EiAYCXJzzgmo/GesTW9oNKMErQxgXiAYHzCRUPJPT5lrUMR3uPskgbqTxWVKu23zI1qUGkrHzmkLEKUKShuhjbNOaNl4dSPYiuY1HwvrejaxBpd7oms2V/NHHJHChVmIcZXAwpzzjHqCO1SNPrOnSmOa81SBoyVKXVkzY9jgtXjuaR66R0U5n+xSMsjGOONht352r3AB6D6VL8Ofitp/hrVJ759Puru3mtXhls1mEXzHGG5BB4BGcZrm01ie5EkDT6dLI4I5DxPyMfxACuMuNMS2k2zXmFXqEG4/zxSpyk763MoxnFvmafy/4LudfJ4ifUbtI7KU20cS4UMAXAHp2PFbHgbxBa6b420oazqUa6eLqOaeSTjaqndzjucYA9SK4VLfTL+3ggtWeG5hj2NlvmfknPv1o1HSDa6QvlK0srS/MWPOAD0pJq9jscp8vMfWUvxUhfUVGn6RLcQTok4aa5UKseGBwUDAk4z1784qU/EbRTuvIEbzxcMr2ruolQFcEsAeB8vHPOO1fIkWs3MSpCiSosMYiC+aflGSfTjkn860jrIkt4YVtNkgJZ9rMA4Iz9c5P5Vok0c8ptnvPxO8Z2M/iXSWsFgmjazfPmbWV9xjkUMM8YA57g100vxD8L2eiWN1qGr2ltJcQI5iUtIysQMq2Bwc+tfLEmqXLXFsZLeNI42bG2Hb95SOfX8ai1OS7gigLKHV1LRjZx25IP1rSM5X0M5Jbs6Hwh4l17UvF+lnU9XnUG5t4hduBJJEpYfMC+fujJHauk+IvjDTRq02l+HPEa63pNvKHSSaxVQZH+aRhsVd3zdTj35rzSTQtSDPEHja3LDncAxUfyNUb3T5dPjWZtyAMSq7s5fPH5DvXIuWV13OhqSak+hqeIdemnmKRsI4/ukRDaDgnmsSOWSRckMeeuKpSOSBk5wK2dFuI7OyE8p2IcrkJuLZJyv5VsrRVkZ3cndlGUYIJBBHQ9CKcLuYgEzyuRwu9y22uh+02lzbxciTzRiP5Od+AGUg8DGN341Wi00B5VnteVJI4A455/Q0cyDlZBaatNAQ6n5AMdASoPUc9au302qppx8q6HJV1ZBjcOf/AK35VV1CwtliYQgxyqjZAJI3DqP5H8ay3u5TawESsNoK9fT/APXRKUmvdE1bcvR3l9cSRGa6nMaSbh5rk5AHIHboTj60t29/500SzTErM21yzcqDgDNZgv7gcmTOemexqYalfISPNfdncSeKm8uoaWsdG99Ox7j3rn9fnlnucMTsjGBk9SetaO85606wsbF70TXGDk8q3Iz64odoq5qk5u1zlya0rKGS90p4YoQWt5N5cdWDDG39M11N/wCGrPUyDayJBLjqF4P1FVtP8F6pBfRv5trJEGySHI6c8jHqBU+0TVxuhOL2uZUqzafp1ozQ7D+8Z1YckkgAH/gP8zXa+H7bSriwWC5gklmDeZGDlAFbsD0xnJ78+lVdUC6TGkF0vnvLyZWT93+A7ke9U9V1y1ksjDFOBJlPLCZyDuGSPwrJVJPRobXI0mYuo30lkJ0t7jzVl3o25Bkg4HPvwfyFYdvL5aLjkq2ce3euukFrqmiWu9EaVSQwVdrOVB5z9P5VHp3hfMO+ZoDCwyJCTux7jGRWykkS6bk9BkOlPqFwIY1s4TdMFVghAXOOlSS2sgmbzre0LgbPutxjj16/4VbixZ3aRKynyJAoKtlTtPY9xx1q14iXydaul9X3j6Nz/Wp17m3LE5oZ9aRwHHJ5HQjtSZ9xQGwOK2OZOwov7vTh50c24A4xXX+HNfh1GyLmXypY/wDWIT/L1rhdTYC2+Zl5PTPJ/Cm+GYXl1u2jLFFYlmOcfKASf5VjOmmtDaFeUZa7Hc6lf/acpLGjxN/Ax4cex7EVxWoRRwSAlW3K7SJgZyvYH6Y/nXXWUem3ASX7WZFkcquTgMw6jHHNZHiOwhudXH2UvtWFctGuVUgk89/XgUqSaeo68lN3RnadcmC9iDJuMcQZVbohOSePxNdFHq263dJHw6rwMAAj0rmbvMN8s8jKfOYjb/cA45qUbRyAB+FVy81mTGpyJxLHmMBjceO+afLcyytvkld2xjLNk1VJ5oDcZPHStEjK5//Z" style="width:32px;height:32px;border-radius:50%;object-fit:cover;margin-left:-8px;border:2px solid var(--bg)">
+            </div>
+            <div>
+              <div class="pl-name">Plantão de Copy · Luísa Marilaque, Lucas Gilbert ou Serginho</div>
+              <div class="pl-time">Quintas às 10h</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end"><span class="pl-freq freq-q">Quinzenal</span><span class="pl-freq" style="background:#FAECE7;color:#993C1D">Inscrição</span></div>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary);line-height:1.5">Ocorre quinzenalmente e exige inscrição. Após o período de inscrições, cada mentorado recebe seu horário.</div>
+      </div>
+
+      <div class="pl-row" style="align-items:flex-start;flex-direction:column;gap:10px;padding:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="display:flex;flex-shrink:0">
+              <img src="data:image/jpeg;base64,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" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid var(--bg)">
+              <img src="data:image/jpeg;base64,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" style="width:32px;height:32px;border-radius:50%;object-fit:cover;margin-left:-8px;border:2px solid var(--bg)">
+            </div>
+            <div>
+              <div class="pl-name">Plantão de Tráfego · Hergamenes ou Allan Patrick</div>
+              <div class="pl-time">Quintas às 11h</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end"><span class="pl-freq freq-q">Quinzenal</span><span class="pl-freq" style="background:#FAECE7;color:#993C1D">Inscrição</span></div>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary);line-height:1.5">Ocorre quinzenalmente e exige inscrição. Todos entram no mesmo horário e o gestor atende por ordem de chegada.</div>
+      </div>
+
+    </div>
+
+    <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;font-family:'Outfit',sans-serif">Outros formatos</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+
+      <div class="mg-card" style="background:#F5F4FE;border-color:var(--purple-100)">
+        <div style="font-size:18px;margin-bottom:10px">⚡</div>
+        <div class="mg-title">Hotseats Estratégicos</div>
+        <div class="mg-desc">Traga seus maiores desafios e receba direcionamento estratégico diretamente dos sócios da VK. Não exige inscrição prévia.</div>
+        <div style="font-size:11px;font-weight:500;color:var(--text-muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">Quintas às 18h · Quinzenal</div>
+      </div>
+
+      <div class="mg-card" style="background:#F5F4FE;border-color:var(--purple-100)">
+        <div style="font-size:18px;margin-bottom:10px">🔨</div>
+        <div class="mg-title">Workshops e Desafios</div>
+        <div class="mg-desc">Espaços de execução guiada onde você aplica estratégias em tempo real. Criados para gerar resultados imediatos.</div>
+        <div style="font-size:11px;font-weight:500;color:var(--text-muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">Agenda variável</div>
+      </div>
+
+      <div class="mg-card" style="background:#F5F4FE;border-color:var(--purple-100);grid-column:1/-1">
+        <div style="font-size:18px;margin-bottom:10px">📈</div>
+        <div class="mg-title">Consultoria Individual</div>
+        <div class="mg-desc">Encontros com os estrategistas da VK, focados em estratégia e direcionamento para o seu negócio.</div>
+        <div style="font-size:11px;font-weight:500;color:var(--text-muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">4 sessões por ano · Mediante solicitação</div>
+      </div>
+
+      <div class="mg-card" style="background:#F5F4FE;border-color:var(--purple-100);cursor:pointer;grid-column:1/-1" onclick="document.getElementById('modal-ind').style.display='flex'">
+        <div style="font-size:18px;margin-bottom:10px">🤝</div>
+        <div class="mg-title">Programa de Indicação</div>
+        <div class="mg-desc">Indique parceiros de negócio para a Comunidade e gere vantagens estratégicas para ambos.</div>
+        <div style="font-size:11px;font-weight:500;color:var(--purple-600);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">Clique para saber mais →</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ENCONTROS PRESENCIAIS -->
+  <div class="sec-label">Encontros presenciais</div>
+  <div class="presencial-hero">
+    <div class="presencial-eyebrow">2 imersões por ano · 2 dias cada</div>
+    <div class="presencial-title">Onde as maiores viradas de negócio acontecem.</div>
+    <div class="presencial-sub">São os momentos em que você sai com decisões tomadas, parcerias formadas e clareza que nenhuma aula online consegue dar.</div>
+    <div class="presencial-pills">
+      <span class="pill">Tendências do mercado</span>
+      <span class="pill">Palestras com os sócios</span>
+      <span class="pill">Networking de alto nível</span>
+      <span class="pill">Parcerias estratégicas</span>
+    </div>
+    <div class="presencial-sep"></div>
+    <div class="outros-label">Outros eventos — sua vaga está garantida</div>
+    <div class="evento-row">
+      <div>
+        <div class="evento-name">VK Summit</div>
+        <div class="evento-sub">Maior evento da VK</div>
+      </div>
+      <span class="evento-tag">Mediante inscrição</span>
+    </div>
+    <div style="height:10px"></div>
+    <div class="evento-row">
+      <div>
+        <div class="evento-name">VK Talks</div>
+        <div class="evento-sub">Encontros de conteúdo e conexão</div>
+      </div>
+      <span class="evento-tag">Mediante inscrição</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- LINKS IMPORTANTES -->
+  <div class="sec-label">Acesso rápido</div>
+  <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px">Tenha tudo à mão.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:10px">
+    <a href="https://hotmart.com/pt-br/club/api-oficial" target="_blank" style="text-decoration:none;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px;display:flex;flex-direction:column;gap:6px;transition:border-color .15s" onmouseover="this.style.borderColor='var(--border-med)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:20px">👥</div>
+      <div style="font-size:13px;font-weight:600;color:var(--text-primary);font-family:'Outfit',sans-serif">Área de membros</div>
+      <div style="font-size:12px;color:var(--text-secondary)">Acesse todas as aulas e eventos gravados</div>
+    </a>
+        <a href="https://docs.google.com/spreadsheets/d/1W5eZZR_3TPIBoFWlOdvVgfVACwpUQHyADdjVJKTC5pc/edit?usp=sharing" target="_blank" style="text-decoration:none;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px;display:flex;flex-direction:column;gap:6px;transition:border-color .15s" onmouseover="this.style.borderColor='var(--border-med)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:20px">📅</div>
+      <div style="font-size:13px;font-weight:600;color:var(--text-primary);font-family:'Outfit',sans-serif">Calendário Excel</div>
+      <div style="font-size:12px;color:var(--text-secondary)">Consulte nosso calendário completo</div>
+    </a>
+    <a href="https://calendar.google.com/calendar/u/0?cid=Y183MDhhZDE1MTQ0ZWYzMGJmNzc1ODU1NmQ3NjgzZDczMjRkZWE0NDU3NTdkYWFmZGFhMjVkMzY1ZDZlNGNlZTk5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20" target="_blank" style="text-decoration:none;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px;display:flex;flex-direction:column;gap:6px;transition:border-color .15s" onmouseover="this.style.borderColor='var(--border-med)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:20px">🗓️</div>
+      <div style="font-size:13px;font-weight:600;color:var(--text-primary);font-family:'Outfit',sans-serif">Google Agenda</div>
+      <div style="font-size:12px;color:var(--text-secondary)">Adicione a agenda da Comunidade à sua</div>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CONTATO CS -->
+  <div class="sec-label">Suporte</div>
+  <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px">Precisa de algo? A Mari é sua ponte oficial.</p>
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;display:flex;align-items:center;gap:16px">
+    <img src="data:image/jpeg;base64,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" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--purple-100)">
+    <div style="flex:1">
+      <div style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:4px">Mari Camargos</div>
+      <div style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:12px">Do time de Educação, o foco da Mari é a sua experiência. Precisa de algo ou quer falar com alguém e não sabe como? Ela é a sua ponte oficial na VK!</div>
+      <a href="https://wa.me/553298064242" target="_blank" class="btn-primary" style="text-decoration:none;display:inline-flex">Falar com a Mari no WhatsApp →</a>
+    </div>
+  </div>
+
+  <!-- MODAL POWER WEEKLY -->
+  <div id="modal-pw" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;padding:16px" onclick="if(event.target===this)this.style.display='none'">
+    <div style="background:var(--bg-card);border-radius:var(--radius-xl);max-width:640px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 8px 40px rgba(0,0,0,0.15)">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:24px 24px 16px;border-bottom:1px solid var(--border)">
+        <div>
+          <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:4px">📈 Consultoria Individual</div>
+          <div style="font-size:13px;color:var(--text-secondary)">Suporte estratégico antes e depois do seu lançamento.</div>
+        </div>
+        <button onclick="document.getElementById('modal-pw').style.display='none'" style="background:var(--bg-surface);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:12px">✕</button>
+      </div>
+      <div style="padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div>
+          <div style="margin-bottom:18px">
+            <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:8px">O objetivo</div>
+            <p style="font-size:13px;color:var(--text-secondary);line-height:1.6">Ter o acompanhamento da VK em todas as fases do seu lançamento, garantindo que você tome as melhores decisões antes e depois de ir para o campo de batalha.</p>
+          </div>
+          <div style="margin-bottom:18px">
+            <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:8px">Como funciona</div>
+            <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:8px">Dois formatos de apoio:</p>
+            <ul style="font-size:13px;color:var(--text-secondary);line-height:1.6;padding-left:16px">
+              <li style="margin-bottom:6px"><strong style="color:var(--text-primary)">Kickoff (Pré-lançamento):</strong> Focado em planejamento, metas de captação e ajuste de rota antes de começar.</li>
+              <li><strong style="color:var(--text-primary)">Debriefing (Pós-lançamento):</strong> Análise profunda de métricas (ROAS, CPL, conversão) para entender o que funcionou e o que precisa ser corrigido.</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:8px">Como solicitar</div>
+            <p style="font-size:13px;color:var(--text-secondary);line-height:1.6">Basta marcar a CS no <strong style="color:var(--text-primary)">grupo da Comunidade</strong> fazendo o seu pedido usando o <strong style="color:var(--text-primary)">MODELO DE SOLICITAÇÃO</strong>. O time analisa seu contexto e agenda a call em até dois dias úteis.</p>
+          </div>
+        </div>
+        <div>
+          <div style="margin-bottom:18px">
+            <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:8px">Regras de ouro</div>
+            <ul style="font-size:13px;color:var(--text-secondary);line-height:1.6;padding-left:16px;margin-bottom:8px">
+              <li style="margin-bottom:4px">Você tem direito a <strong style="color:var(--text-primary)">4 calls por ano.</strong></li>
+              <li>É necessário um intervalo mínimo de <strong style="color:var(--text-primary)">45 dias</strong> entre cada solicitação.</li>
+            </ul>
+            <p style="font-size:13px;color:var(--text-secondary);line-height:1.6">Após o agendamento, você deve preencher um formulário completo, enviado pela CS, com seus dados para que o estrategista chegue preparado para a call.</p>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:8px">Modelo de solicitação</div>
+            <p style="font-size:12px;color:var(--text-secondary);line-height:1.5;margin-bottom:10px">Copie o texto abaixo, preencha com seus dados e marque a <strong style="color:var(--text-primary)">@Mariana Camargos</strong> no grupo:</p>
+            <div id="kickoff-text" style="background:var(--bg-surface);border-radius:var(--radius-sm);padding:12px;font-size:11px;font-family:monospace;color:var(--text-secondary);line-height:1.6;white-space:pre-wrap;margin-bottom:8px">SOLICITAÇÃO DE KICKOFF
+
+Seu lançamento está integrado ao VK Metrics BI?
+Data prevista do lançamento:
+Nicho e subnicho:
+Ticket médio:
+Investimento previsto em tráfego:
+Maior desafio atual (Ex: conversão, escala, leads):</div>
+            <button onclick="copyModalText('kickoff-text',this)" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:7px 12px;border-radius:var(--radius-md);border:1px solid var(--border-med);background:var(--bg-card);color:var(--text-primary);cursor:pointer;margin-bottom:14px;font-family:'Outfit',sans-serif">📋 Copiar solicitação de Kickoff</button>
+            <div id="debriefing-text" style="background:var(--bg-surface);border-radius:var(--radius-sm);padding:12px;font-size:11px;font-family:monospace;color:var(--text-secondary);line-height:1.6;white-space:pre-wrap;margin-bottom:8px">SOLICITAÇÃO DE DEBRIEFING
+
+Seu lançamento está integrado ao VK Metrics BI?
+Data do lançamento realizado:
+Nicho e subnicho:
+Ticket médio:
+Investimento total:
+Faturamento:
+Número de vendas e leads gerados:
+Principal gargalo identificado (Ex: o CPL ficou caro, o checkout não converteu):</div>
+            <button onclick="copyModalText('debriefing-text',this)" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:7px 12px;border-radius:var(--radius-md);border:1px solid var(--border-med);background:var(--bg-card);color:var(--text-primary);cursor:pointer;font-family:'Outfit',sans-serif">📋 Copiar solicitação de Debriefing</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PROGRAMA DE INDICAÇÃO -->
+  <div id="modal-ind" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;padding:16px" onclick="if(event.target===this)this.style.display='none'">
+    <div style="background:var(--bg-card);border-radius:var(--radius-xl);max-width:640px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 8px 40px rgba(0,0,0,0.15)">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:24px 24px 16px;border-bottom:1px solid var(--border)">
+        <div>
+          <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:4px">🤝 Programa de Indicação</div>
+          <div style="font-size:13px;color:var(--text-secondary)">Traga quem agrega.</div>
+        </div>
+        <button onclick="document.getElementById('modal-ind').style.display='none'" style="background:var(--bg-surface);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:12px">✕</button>
+      </div>
+      <div style="padding:24px">
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:20px">O objetivo é trazer novos membros qualificados para a nossa comunidade através de quem já vive a experiência.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <div>
+            <div style="margin-bottom:18px">
+              <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:8px">Como funciona</div>
+              <ul style="font-size:13px;color:var(--text-secondary);line-height:1.6;padding-left:16px">
+                <li style="margin-bottom:6px"><strong style="color:var(--text-primary)">Indicação Seletiva:</strong> Você indica pessoas do seu networking que tenham o perfil para somar ao grupo.</li>
+                <li style="margin-bottom:6px"><strong style="color:var(--text-primary)">Curadoria VK:</strong> Todas as indicações passam por análise do time e dos sócios para garantir o nível da experiência.</li>
+                <li><strong style="color:var(--text-primary)">Convite VIP:</strong> Se aprovado, seu indicado é convidado por um dos sócios para conhecer nosso evento presencial.</li>
+              </ul>
+            </div>
+            <div>
+              <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:8px">Regras importantes</div>
+              <ul style="font-size:13px;color:var(--text-secondary);line-height:1.6;padding-left:16px">
+                <li style="margin-bottom:4px">Focamos em novos <strong style="color:var(--text-primary)">negócios</strong> e não apenas em novos contatos.</li>
+                <li style="margin-bottom:4px">A indicação não garante vaga automática; prezamos pela qualidade do grupo.</li>
+                <li>O benefício é liberado após a assinatura do contrato e pagamento do indicado.</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div style="background:var(--purple-50);border:1px solid var(--purple-100);border-radius:var(--radius-md);padding:14px;margin-bottom:12px">
+              <div style="font-size:12px;font-weight:600;color:var(--purple-800);margin-bottom:10px">🏆 Premiações — Comunidade:</div>
+              <ul style="font-size:12px;color:var(--purple-600);line-height:1.7;padding-left:14px">
+                <li>1 indicação — <strong>10% desc. na renovação</strong></li>
+                <li>2 indicações — <strong>Echo Dot</strong></li>
+                <li>3 indicações — <strong>Kindle</strong></li>
+                <li>4 indicações — <strong>Kit de produto gourmet</strong></li>
+                <li>5 indicações — <strong>Mala de mão personalizada</strong></li>
+              </ul>
+            </div>
+            <div style="background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--radius-md);padding:14px">
+              <div style="font-size:12px;font-weight:600;color:var(--teal-800);margin-bottom:10px">🏆 Premiações — Mastermind:</div>
+              <ul style="font-size:12px;color:var(--teal-600);line-height:1.7;padding-left:14px">
+                <li>1 indicação — <strong>10% desc. na renovação</strong></li>
+                <li>2 indicações — <strong>Kit de produto gourmet</strong></li>
+                <li>3 indicações — <strong>Alexa com tela</strong></li>
+                <li>4 indicações — <strong>Óculos Meta</strong></li>
+                <li>5 indicações — <strong>iPhone</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+        <div class="footer-logo">Comunidade VK Metrics Pro · VK</div>
+    <div class="footer-sub">Dúvidas? Fale com a Mari: (32) 99806-4242</div>
+  </div>
+
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const nome = params.get('nome') || params.get('name') || '';
+  const bonusParam = (params.get('bonus') || '').toLowerCase();
+
+  if (nome) {
+    const primeiro = nome.trim().split(' ')[0];
+    document.getElementById('headline').innerHTML =
+      'Bem-vindo, <span>' + primeiro + '.</span>';
+  }
+
+  const bonusMap = {
+    metrics: {
+      name: 'VK Metrics BI',
+      desc: 'Ferramenta que organiza automaticamente os números mais relevantes do seu negócio, 24/7.'
+    },
+    mastermind: {
+      name: 'Mastermind',
+      desc: 'Encontros exclusivos com empreendedores de alto nível para trocas e parcerias estratégicas.'
+    }
+  };
+
+  const activeBonus = [];
+  if (bonusParam.includes('metrics')) activeBonus.push(bonusMap.metrics);
+  if (bonusParam.includes('mastermind')) activeBonus.push(bonusMap.mastermind);
+
+  if (activeBonus.length > 0) {
+    document.getElementById('bonus-section').style.display = 'block';
+    const grid = document.getElementById('bonus-grid');
+    activeBonus.forEach(b => {
+      const el = document.createElement('div');
+      el.className = 'bonus-card';
+      el.innerHTML = '<div class="bonus-name">' + b.name + '</div><div class="bonus-desc">' + b.desc + '</div>';
+      grid.appendChild(el);
+    });
+  }
+
+  function copyModalText(id, btn) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copiado!';
+      setTimeout(() => btn.textContent = orig, 2000);
+    });
+  }
+
+  function addCheck(id) {
+    const card = document.getElementById(id);
+    card.classList.add('done');
+    const chk = document.createElement('div');
+    chk.className = 'check-abs';
+    chk.innerHTML = '<svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>';
+    card.appendChild(chk);
+  }
+
+  function markDone(n) {
+    addCheck('c' + n);
+    if (n === 1) {
+      document.getElementById('btn1').outerHTML = '<button class="btn-done">Formulário preenchido</button>';
+      document.getElementById('c2').classList.remove('locked');
+      document.getElementById('lock2').style.display = 'none';
+      document.getElementById('btn2').style.display = 'inline-flex';
+    }
+    if (n === 2) {
+      document.getElementById('btn2').outerHTML = '<button class="btn-done">Contrato assinado</button>';
+      document.getElementById('cel2').style.display = 'block';
+      document.getElementById('c3').classList.remove('locked');
+      document.getElementById('lock3').style.display = 'none';
+      document.getElementById('btn3').style.display = 'inline-flex';
+    }
+    if (n === 3) {
+      document.getElementById('btn3').outerHTML = '<button class="btn-done">No grupo</button>';
+      document.getElementById('c4').classList.remove('locked');
+      document.getElementById('lock4').style.display = 'none';
+      document.getElementById('btn4').style.display = 'inline-flex';
+      document.getElementById('briefing4').style.display = 'block';
+    }
+    if (n === 4) {
+      document.getElementById('btn4').outerHTML = '<button class="btn-done">Sessão agendada</button>';
+      ['t1','t2','t3'].forEach(id => document.getElementById(id).classList.remove('locked'));
+      document.getElementById('c5').classList.remove('locked');
+      document.getElementById('lock5').style.display = 'none';
+      document.getElementById('btn5').style.display = 'inline-flex';
+    }
+    if (n === 5) {
+      document.getElementById('btn5').outerHTML = '<button class="btn-done">VK Metrics ativado</button>';
+    }
+  }
+</script>
+</body>
+</html>
